@@ -162,6 +162,4 @@ Soelistijo, S. A., et al. (2021). Pedoman Pengelolaan dan Pencegahan Diabetes Me
 
 [ ] Meal Planner: Menyusun menu pagi/siang/malam agar pas dengan total kalori penderita.
 
-## 🔜 Dokumentasi
-
 <i>Project ini disusun untuk memenuhi Tugas Akhir Mata Kuliah Rekayasa Sistem Berbasis Pengetahuan Kelas C.</i>
