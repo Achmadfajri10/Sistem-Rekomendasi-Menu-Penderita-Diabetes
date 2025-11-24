@@ -1,0 +1,611 @@
+[
+  {
+    "id": "C001",
+    "nama": "Nasi Merah",
+    "kategori": "Karbohidrat",
+    "porsi_standar_gram": 100,
+    "nutrisi": {
+      "kalori": 110,
+      "karbohidrat": 23.0,
+      "protein": 2.8,
+      "lemak": 0.9,
+      "natrium_mg": 5,
+      "gula_gram": 0.4
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 50,
+      "kategori_ig": "Rendah",
+      "catatan_medis": "Karbohidrat kompleks kaya serat. Membantu memperlambat penyerapan gula darah."
+    },
+    "tags": ["Kompleks", "Tinggi Serat"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "C002",
+    "nama": "Nasi Hitam",
+    "kategori": "Karbohidrat",
+    "porsi_standar_gram": 100,
+    "nutrisi": {
+      "kalori": 140,
+      "karbohidrat": 34.0,
+      "protein": 5.0,
+      "lemak": 1.5,
+      "natrium_mg": 0,
+      "gula_gram": 0.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 42,
+      "kategori_ig": "Rendah",
+      "catatan_medis": "Sangat tinggi antioksidan (antosianin) dan serat. Pilihan terbaik untuk diabetes."
+    },
+    "tags": ["Superfood", "Kompleks"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "C003",
+    "nama": "Oatmeal (Bubur Gandum)",
+    "kategori": "Karbohidrat",
+    "porsi_standar_gram": 150,
+    "nutrisi": {
+      "kalori": 140,
+      "karbohidrat": 25.0,
+      "protein": 5.0,
+      "lemak": 2.5,
+      "natrium_mg": 0,
+      "gula_gram": 0.5
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 55,
+      "kategori_ig": "Sedang",
+      "catatan_medis": "Mengandung Beta-Glukan yang terbukti menurunkan kolesterol dan gula darah."
+    },
+    "tags": ["Jantung Sehat", "Tinggi Serat"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "C004",
+    "nama": "Mie Shirataki (Konjac)",
+    "kategori": "Karbohidrat",
+    "porsi_standar_gram": 100,
+    "nutrisi": {
+      "kalori": 15,
+      "karbohidrat": 3.0,
+      "protein": 0.0,
+      "lemak": 0.0,
+      "natrium_mg": 0,
+      "gula_gram": 0.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 0,
+      "kategori_ig": "Sangat Rendah",
+      "catatan_medis": "Hampir nol kalori dan karbohidrat. Sangat direkomendasikan untuk manajemen berat badan."
+    },
+    "tags": ["Diet Keto", "Rendah Kalori"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "C005",
+    "nama": "Ubi Jalar Rebus",
+    "kategori": "Karbohidrat",
+    "porsi_standar_gram": 100,
+    "nutrisi": {
+      "kalori": 86,
+      "karbohidrat": 20.0,
+      "protein": 1.6,
+      "lemak": 0.1,
+      "natrium_mg": 55,
+      "gula_gram": 4.2
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 44,
+      "kategori_ig": "Rendah",
+      "catatan_medis": "Indeks glikemik rendah JIKA direbus. Kaya Vitamin A."
+    },
+    "tags": ["Lokal", "Vitamin A"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "C006",
+    "nama": "Singkong Rebus",
+    "kategori": "Karbohidrat",
+    "porsi_standar_gram": 100,
+    "nutrisi": {
+      "kalori": 146,
+      "karbohidrat": 38.0,
+      "protein": 1.2,
+      "lemak": 0.3,
+      "natrium_mg": 14,
+      "gula_gram": 1.7
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 55,
+      "kategori_ig": "Sedang",
+      "catatan_medis": "Sumber energi padat. Perhatikan porsi agar tidak berlebihan karbohidrat."
+    },
+    "tags": ["Lokal", "Bebas Gluten"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "C007",
+    "nama": "Nasi Putih",
+    "kategori": "Karbohidrat",
+    "porsi_standar_gram": 100,
+    "nutrisi": {
+      "kalori": 129,
+      "karbohidrat": 28.0,
+      "protein": 2.7,
+      "lemak": 0.3,
+      "natrium_mg": 1,
+      "gula_gram": 0.1
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 72,
+      "kategori_ig": "Tinggi",
+      "catatan_medis": "Karbohidrat sederhana. Cepat menaikkan gula darah. Sebaiknya dibatasi."
+    },
+    "tags": ["Batasi", "IG Tinggi"],
+    "kontraindikasi": ["Hiperglikemia", "Obesitas"]
+  },
+  {
+    "id": "P001",
+    "nama": "Dada Ayam Tanpa Kulit (Rebus/Bakar)",
+    "kategori": "Protein",
+    "porsi_standar_gram": 100,
+    "nutrisi": {
+      "kalori": 165,
+      "karbohidrat": 0.0,
+      "protein": 31.0,
+      "lemak": 3.6,
+      "natrium_mg": 74,
+      "gula_gram": 0.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 0,
+      "kategori_ig": "Sangat Rendah",
+      "catatan_medis": "Protein hewani tanpa lemak terbaik. Menjaga kenyang lebih lama."
+    },
+    "tags": ["Protein Lean", "Aman"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "P002",
+    "nama": "Ikan Kembung (Omega-3)",
+    "kategori": "Protein",
+    "porsi_standar_gram": 100,
+    "nutrisi": {
+      "kalori": 167,
+      "karbohidrat": 0.0,
+      "protein": 19.3,
+      "lemak": 9.3,
+      "natrium_mg": 90,
+      "gula_gram": 0.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 0,
+      "kategori_ig": "Sangat Rendah",
+      "catatan_medis": "Kaya asam lemak Omega-3 yang baik untuk jantung."
+    },
+    "tags": ["Sehat Jantung", "Lokal"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "P003",
+    "nama": "Tahu Putih",
+    "kategori": "Protein",
+    "porsi_standar_gram": 100,
+    "nutrisi": {
+      "kalori": 76,
+      "karbohidrat": 1.9,
+      "protein": 8.0,
+      "lemak": 4.8,
+      "natrium_mg": 7,
+      "gula_gram": 0.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 15,
+      "kategori_ig": "Rendah",
+      "catatan_medis": "Protein nabati rendah kalori. Aman dikonsumsi setiap hari."
+    },
+    "tags": ["Nabati", "Ekonomis"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "P004",
+    "nama": "Tempe Bacem (Manis)",
+    "kategori": "Protein",
+    "porsi_standar_gram": 50,
+    "nutrisi": {
+      "kalori": 160,
+      "karbohidrat": 12.0,
+      "protein": 10.0,
+      "lemak": 8.0,
+      "natrium_mg": 300,
+      "gula_gram": 8.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 45,
+      "kategori_ig": "Rendah",
+      "catatan_medis": "Perhatikan penggunaan gula merah dalam bacem. Batasi jika gula darah tinggi."
+    },
+    "tags": ["Lokal", "Hati-hati Gula"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "P005",
+    "nama": "Daging Sapi Tanpa Lemak",
+    "kategori": "Protein",
+    "porsi_standar_gram": 100,
+    "nutrisi": {
+      "kalori": 250,
+      "karbohidrat": 0.0,
+      "protein": 26.0,
+      "lemak": 15.0,
+      "natrium_mg": 72,
+      "gula_gram": 0.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 0,
+      "kategori_ig": "Rendah",
+      "catatan_medis": "Sumber zat besi. Pilih potongan tanpa gajih/lemak untuk kesehatan jantung."
+    },
+    "tags": ["Zat Besi", "Batasi Lemak"],
+    "kontraindikasi": ["Kolesterol Tinggi"]
+  },
+  {
+    "id": "V001",
+    "nama": "Sayur Brokoli Rebus",
+    "kategori": "Sayuran",
+    "porsi_standar_gram": 100,
+    "nutrisi": {
+      "kalori": 34,
+      "karbohidrat": 7.0,
+      "protein": 2.8,
+      "lemak": 0.4,
+      "natrium_mg": 33,
+      "gula_gram": 1.5
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 15,
+      "kategori_ig": "Sangat Rendah",
+      "catatan_medis": "Sayuran non-tepung. Dapat dikonsumsi bebas. Kaya sulforaphane."
+    },
+    "tags": ["Non-Tepung", "Bebas Konsumsi"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "V002",
+    "nama": "Terong Ungu Kukus/Bakar",
+    "kategori": "Sayuran",
+    "porsi_standar_gram": 100,
+    "nutrisi": {
+      "kalori": 25,
+      "karbohidrat": 6.0,
+      "protein": 1.0,
+      "lemak": 0.2,
+      "natrium_mg": 2,
+      "gula_gram": 3.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 15,
+      "kategori_ig": "Sangat Rendah",
+      "catatan_medis": "Kaya antioksidan nasunin. Hindari mengolah dengan banyak minyak (digoreng)."
+    },
+    "tags": ["Antioksidan", "Rendah Kalori"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "V003",
+    "nama": "Wortel Rebus",
+    "kategori": "Sayuran",
+    "porsi_standar_gram": 100,
+    "nutrisi": {
+      "kalori": 41,
+      "karbohidrat": 10.0,
+      "protein": 0.9,
+      "lemak": 0.2,
+      "natrium_mg": 69,
+      "gula_gram": 4.7
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 39,
+      "kategori_ig": "Rendah",
+      "catatan_medis": "Kaya Beta-karoten untuk mata. Aman dikonsumsi meski rasanya manis alami."
+    },
+    "tags": ["Vitamin A", "Serat"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "F001",
+    "nama": "Alpukat (Tanpa Gula)",
+    "kategori": "Lemak Sehat",
+    "porsi_standar_gram": 100,
+    "nutrisi": {
+      "kalori": 160,
+      "karbohidrat": 9.0,
+      "protein": 2.0,
+      "lemak": 15.0,
+      "natrium_mg": 7,
+      "gula_gram": 0.7
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 15,
+      "kategori_ig": "Sangat Rendah",
+      "catatan_medis": "Sumber lemak tak jenuh tunggal yang baik. Mengenyangkan, tapi tinggi kalori."
+    },
+    "tags": ["Lemak Sehat", "Rendah GI"],
+    "kontraindikasi": ["Obesitas (Batasi Porsi)"]
+  },
+  {
+    "id": "F002",
+    "nama": "Buah Pir (Dengan Kulit)",
+    "kategori": "Buah",
+    "porsi_standar_gram": 100,
+    "nutrisi": {
+      "kalori": 57,
+      "karbohidrat": 15.0,
+      "protein": 0.4,
+      "lemak": 0.1,
+      "natrium_mg": 1,
+      "gula_gram": 10.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 38,
+      "kategori_ig": "Rendah",
+      "catatan_medis": "Makan dengan kulitnya untuk serat maksimal. Indeks glikemik rendah."
+    },
+    "tags": ["Buah Aman", "Tinggi Serat"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "F003",
+    "nama": "Stroberi",
+    "kategori": "Buah",
+    "porsi_standar_gram": 100,
+    "nutrisi": {
+      "kalori": 32,
+      "karbohidrat": 7.7,
+      "protein": 0.7,
+      "lemak": 0.3,
+      "natrium_mg": 1,
+      "gula_gram": 4.9
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 40,
+      "kategori_ig": "Rendah",
+      "catatan_medis": "Rendah gula dibandingkan buah tropis lain. Kaya Vitamin C."
+    },
+    "tags": ["Rendah Gula", "Antioksidan"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "S001",
+    "nama": "Yogurt Plain (Tanpa Gula)",
+    "kategori": "Snack",
+    "porsi_standar_gram": 150,
+    "nutrisi": {
+      "kalori": 90,
+      "karbohidrat": 10.0,
+      "protein": 9.0,
+      "lemak": 0.0,
+      "natrium_mg": 70,
+      "gula_gram": 7.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 14,
+      "kategori_ig": "Sangat Rendah",
+      "catatan_medis": "Probiotik baik. Pilih varian Plain/Greek untuk menghindari gula tambahan."
+    },
+    "tags": ["Probiotik", "Sehat"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "S002",
+    "nama": "Kacang Almond Sangrai",
+    "kategori": "Snack",
+    "porsi_standar_gram": 30,
+    "nutrisi": {
+      "kalori": 170,
+      "karbohidrat": 6.0,
+      "protein": 6.0,
+      "lemak": 15.0,
+      "natrium_mg": 0,
+      "gula_gram": 1.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 15,
+      "kategori_ig": "Sangat Rendah",
+      "catatan_medis": "Kaya magnesium dan lemak sehat. Membantu sensitivitas insulin."
+    },
+    "tags": ["Lemak Sehat", "Magnesium"],
+    "kontraindikasi": ["Obesitas (Batasi)"]
+  },
+  {
+    "id": "S003",
+    "nama": "Puding Biji Chia (Chia Seeds)",
+    "kategori": "Snack",
+    "porsi_standar_gram": 100,
+    "nutrisi": {
+      "kalori": 120,
+      "karbohidrat": 10.0,
+      "protein": 4.0,
+      "lemak": 7.0,
+      "natrium_mg": 5,
+      "gula_gram": 0.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 1,
+      "kategori_ig": "Sangat Rendah",
+      "catatan_medis": "Sangat tinggi serat larut. Memperlambat pencernaan glukosa."
+    },
+    "tags": ["Superfood", "Tinggi Serat"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "S004",
+    "nama": "Roti Manis/Kue Kering",
+    "kategori": "Snack",
+    "porsi_standar_gram": 50,
+    "nutrisi": {
+      "kalori": 210,
+      "karbohidrat": 35.0,
+      "protein": 4.0,
+      "lemak": 8.0,
+      "natrium_mg": 180,
+      "gula_gram": 15.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 85,
+      "kategori_ig": "Tinggi",
+      "catatan_medis": "Tepung olahan dan gula sederhana. Memicu lonjakan gula darah drastis."
+    },
+    "tags": ["Karbohidrat Sederhana", "Hindari"],
+    "kontraindikasi": ["Diabetes Tipe 2", "Obesitas"]
+  },
+  {
+    "id": "S005",
+    "nama": "Gorengan (Bakwan/Tempe Tepung)",
+    "kategori": "Snack",
+    "porsi_standar_gram": 50,
+    "nutrisi": {
+      "kalori": 180,
+      "karbohidrat": 20.0,
+      "protein": 3.0,
+      "lemak": 12.0,
+      "natrium_mg": 200,
+      "gula_gram": 0.5
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 65,
+      "kategori_ig": "Sedang",
+      "catatan_medis": "Tinggi lemak jenuh dan lemak trans. Memperburuk resistensi insulin."
+    },
+    "tags": ["Lemak Jenuh", "Gorengan", "Hindari"],
+    "kontraindikasi": ["Obesitas", "Kolesterol Tinggi", "Hipertensi"]
+  },
+  {
+    "id": "M001",
+    "nama": "Air Mineral",
+    "kategori": "Minuman",
+    "porsi_standar_gram": 250,
+    "nutrisi": {
+      "kalori": 0,
+      "karbohidrat": 0.0,
+      "protein": 0.0,
+      "lemak": 0.0,
+      "natrium_mg": 2,
+      "gula_gram": 0.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 0,
+      "kategori_ig": "Sangat Rendah",
+      "catatan_medis": "Minuman terbaik untuk hidrasi tanpa kalori dan gula."
+    },
+    "tags": ["Bebas Gula", "Wajib"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "M002",
+    "nama": "Teh Hijau (Tanpa Gula)",
+    "kategori": "Minuman",
+    "porsi_standar_gram": 200,
+    "nutrisi": {
+      "kalori": 2,
+      "karbohidrat": 0.0,
+      "protein": 0.0,
+      "lemak": 0.0,
+      "natrium_mg": 0,
+      "gula_gram": 0.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 0,
+      "kategori_ig": "Sangat Rendah",
+      "catatan_medis": "Kaya antioksidan EGCG yang membantu sensitivitas insulin."
+    },
+    "tags": ["Antioksidan", "Bebas Gula"],
+    "kontraindikasi": []
+  },
+  {
+    "id": "M003",
+    "nama": "Kopi Hitam (Tanpa Gula)",
+    "kategori": "Minuman",
+    "porsi_standar_gram": 200,
+    "nutrisi": {
+      "kalori": 5,
+      "karbohidrat": 0.0,
+      "protein": 0.3,
+      "lemak": 0.0,
+      "natrium_mg": 5,
+      "gula_gram": 0.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 0,
+      "kategori_ig": "Sangat Rendah",
+      "catatan_medis": "Aman jika tanpa gula/krim. Hindari jika ada gangguan lambung/jantung berdebar."
+    },
+    "tags": ["Bebas Gula", "Kafein"],
+    "kontraindikasi": ["Hipertensi (Batasi)", "Asam Lambung"]
+  },
+  {
+    "id": "M004",
+    "nama": "Jus Buah Kotakan (Kemasan)",
+    "kategori": "Minuman",
+    "porsi_standar_gram": 250,
+    "nutrisi": {
+      "kalori": 120,
+      "karbohidrat": 28.0,
+      "protein": 0.0,
+      "lemak": 0.0,
+      "natrium_mg": 20,
+      "gula_gram": 25.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 65,
+      "kategori_ig": "Tinggi",
+      "catatan_medis": "Mengandung gula tambahan sangat tinggi dan sedikit serat. Hindari."
+    },
+    "tags": ["Tinggi Gula", "Minuman Manis", "Hindari"],
+    "kontraindikasi": ["Diabetes Tipe 2", "Obesitas"]
+  },
+  {
+    "id": "M005",
+    "nama": "Es Teh Manis",
+    "kategori": "Minuman",
+    "porsi_standar_gram": 300,
+    "nutrisi": {
+      "kalori": 90,
+      "karbohidrat": 22.0,
+      "protein": 0.0,
+      "lemak": 0.0,
+      "natrium_mg": 10,
+      "gula_gram": 22.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 70,
+      "kategori_ig": "Tinggi",
+      "catatan_medis": "Gula cair sangat cepat diserap tubuh, menyebabkan lonjakan gula darah drastis."
+    },
+    "tags": ["Tinggi Gula", "Minuman Manis", "Hindari"],
+    "kontraindikasi": ["Diabetes Tipe 2", "Obesitas"]
+  },
+  {
+    "id": "M006",
+    "nama": "Minuman Boba (Milk Tea)",
+    "kategori": "Minuman",
+    "porsi_standar_gram": 500,
+    "nutrisi": {
+      "kalori": 450,
+      "karbohidrat": 80.0,
+      "protein": 2.0,
+      "lemak": 12.0,
+      "natrium_mg": 50,
+      "gula_gram": 50.0
+    },
+    "metrik_diabetes": {
+      "indeks_glikemik": 80,
+      "kategori_ig": "Sangat Tinggi",
+      "catatan_medis": "Sangat berbahaya. Kombinasi gula tinggi, tepung (boba), dan lemak jenuh (krimer)."
+    },
+    "tags": ["Sangat Tinggi Gula", "Tinggi Kalori", "Hindari"],
+    "kontraindikasi": ["Diabetes Tipe 2", "Obesitas"]
+  }
+]

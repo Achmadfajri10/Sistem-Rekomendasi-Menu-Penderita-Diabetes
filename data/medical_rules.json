@@ -1,0 +1,33 @@
+{
+  "batas_gula_darah": {
+    "normal_atas": 100,
+    "prediabetes_batas": 125,
+    "diabetes_batas": 126,
+    "hiperglikemia_waspada": 140,
+    "hipoglikemia_batas": 70
+  },
+  "batas_imt": {
+    "kurus": 18.5,
+    "normal_batas": 22.9,
+    "overweight_batas": 24.9,
+    "obesitas_batas": 25.0
+  },
+  "aturan_komplikasi": {
+    "Hipertensi": {
+      "zat_pantangan": "natrium_mg",
+      "batas_aman_per_menu": 400,
+      "pesan": "Batas natrium ketat diperlukan untuk mencegah lonjakan tekanan darah (DASH Diet)."
+    },
+    "Kolesterol Tinggi": {
+      "zat_pantangan": "lemak",
+      "batas_aman_per_menu": 15,
+      "pesan": "Batasi lemak jenuh untuk menjaga kesehatan jantung."
+    },
+    "Gangguan Ginjal": {
+      "zat_pantangan": "protein",
+      "batas_aman_per_menu": 20,
+      "pesan": "Diet rendah protein diperlukan untuk meringankan beban kerja ginjal."
+    }
+  },
+  "referensi": "PERKENI 2021 & ADA Standards of Care 2023"
+}
