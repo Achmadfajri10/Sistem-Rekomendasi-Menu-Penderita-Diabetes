@@ -5,8 +5,8 @@ from modules.inference_engine import DiabetesInferenceEngine
 
 # === KONFIGURASI HALAMAN ===
 st.set_page_config(
-    page_title="Sistem Pakar Diabetes",
-    page_icon="",
+    page_title="Sistem Rekomendasi Menu Makanan untuk Penderita Diabetes",
+    page_icon="🍎",
     layout="wide"
 )
 
@@ -20,10 +20,10 @@ except Exception as e:
     st.stop()
 
 # === HEADER APLIKASI ===
-st.title(" Sistem Rekomendasi Menu Diabetes")
+st.title("🍎 Sistem Rekomendasi Menu Makanan untuk Penderita Diabetes")
 st.markdown("""
 Aplikasi ini membantu penderita diabetes menentukan **kebutuhan kalori harian** dan memilih **menu makanan yang aman** berdasarkan kondisi medis (Gula Darah, BMI, & Komplikasi).
-*Referensi: Pedoman PERKENI 2021 & ADA Standards of Care 2023*
+*Referensi: Pedoman PERKENI 2024 & ADA Standards of Care 2023*
 """)
 
 st.divider()
