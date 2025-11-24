@@ -11,6 +11,12 @@ Sistem pakar berbasis web untuk membantu penderita Diabetes Melitus Tipe 2 menen
 
 ## 📸 Dokumentasi
 
+<img width="1879" height="788" alt="Screenshot 2025-11-24 213253" src="https://github.com/user-attachments/assets/bc5e6570-e2c3-40e4-a789-14b39fd21314" />
+
+<img width="1867" height="789" alt="Screenshot 2025-11-24 213340" src="https://github.com/user-attachments/assets/76f77797-fc49-4b4e-9aa6-df9c5f899d3a" />
+
+<img width="1857" height="765" alt="Screenshot 2025-11-24 213405" src="https://github.com/user-attachments/assets/621b2f99-79ca-476f-97f7-525d092bf15d" />
+
 ## 🌟 Fitur Unggulan
 
 ### 1. 🧮 Kalkulator Kalori Medis (Medical-Grade)
