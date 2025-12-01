@@ -11,11 +11,21 @@ Sistem pakar berbasis web untuk membantu penderita Diabetes Melitus Tipe 2 menen
 
 ## 📸 Dokumentasi
 
-![alt text](image.png)
+### Halaman Awal
 
-![alt text](image-1.png)
+![alt text](<Screenshot 2025-12-01 222819.png>)
 
-![alt text](image-2.png)
+### Halaman Menu Makanan Aman
+
+![alt text](<Screenshot 2025-12-01 222726.png>)
+
+### Halaman Pantangan
+
+![alt text](<Screenshot 2025-12-01 222748.png>)
+
+### Halaman Menu Harian
+
+![alt text](<Screenshot 2025-12-01 222802.png>)
 
 ## 🏛️ Arsitektur & Rekayasa Pengetahuan
 
@@ -138,10 +148,22 @@ cd Sistem-Rekomendasi-Menu-Penderita-Diabetes
 pip install -r requirements.txt
 ```
 
+Atau
+
+```bash
+python -m pip install -r requirements.txt
+```
+
 ### Jalankan Aplikasi:
 
 ```bash
 streamlit run app.py
+```
+
+Atau
+
+```bash
+python -m streamlit run app.py
 ```
 
 (Akses di browser: http://localhost:8501)
