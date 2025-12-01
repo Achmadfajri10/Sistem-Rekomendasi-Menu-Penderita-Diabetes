@@ -9,6 +9,12 @@
 
 Sistem pakar berbasis web untuk membantu penderita Diabetes Melitus Tipe 2 menentukan kebutuhan kalori harian dan mendapatkan rekomendasi menu makanan yang aman. Sistem ini dibangun menggunakan pendekatan Rule-Based System yang mengacu pada standar medis resmi PERKENI 2024 dan ADA 2023.
 
+🌐 Demo Aplikasi
+
+Tautan Web yang di hosting menggunakan Streamlit:
+
+https://sistem-rekomendasi-menu-penderita-diabetes.streamlit.app/
+
 ## 📸 Dokumentasi
 
 ### Halaman Awal
