@@ -7,93 +7,117 @@
 
 # 🍎 Sistem Rekomendasi Menu Makanan untuk Penderita Diabetes
 
-Sistem pakar berbasis web untuk membantu penderita Diabetes Melitus Tipe 2 menentukan kebutuhan kalori harian dan mendapatkan rekomendasi menu makanan yang aman. Sistem ini dibangun berdasarkan standar medis resmi dari PERKENI 2024 dan ADA 2023.
+Sistem pakar berbasis web untuk membantu penderita Diabetes Melitus Tipe 2 menentukan kebutuhan kalori harian dan mendapatkan rekomendasi menu makanan yang aman. Sistem ini dibangun menggunakan pendekatan Rule-Based System yang mengacu pada standar medis resmi PERKENI 2024 dan ADA 2023.
 
 ## 📸 Dokumentasi
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
+## 🏛️ Arsitektur & Rekayasa Pengetahuan
+
+Sistem ini dirancang menggunakan arsitektur Sistem Pakar yang memisahkan Basis Pengetahuan (Knowledge Base) dengan Mesin Inferensi (Inference Engine).
+
+### 1. Akuisisi Pengetahuan (Knowledge Acquisition)
+
+Pengetahuan dalam sistem ini diekstraksi dari pedoman medis kredibel:
+
+- PERKENI 2024: Pedoman Pengelolaan dan Pencegahan Diabetes Melitus Tipe 2 di Indonesia. Digunakan untuk:
+
+  - Rumus perhitungan Kalori Basal & Total (BBI).
+
+  - Klasifikasi IMT (Asia-Pasifik).
+
+  - Batasan klinis (Gula Darah Puasa, Hipertensi).
+
+- ADA Standards 2023: American Diabetes Association. Digunakan untuk:
+
+  - Manajemen Nutrisi Medis (Indeks Glikemik).
+
+  - Manajemen Lipid (Pembatasan Lemak Jenuh/Trans).
+
+- TKPI & USDA: Basis data nutrisi untuk nilai gizi bahan makanan lokal.
+
+### 2. Representasi Pengetahuan (Knowledge Representation)
+
+Data disimpan dalam struktur terstruktur berbasis JSON (/data/) untuk memudahkan pembaruan tanpa mengubah kode program.
+
+- Fakta Medis: Disimpan dalam medical_rules.json (Contoh: Batas Gula Darah = 140 mg/dL).
+
+- Data Makanan: Disimpan dalam food_database.json dengan atribut:
+
+  - nutrisi: Kalori, Karbo, Protein, Lemak, Natrium.
+
+  - metrik_diabetes: Indeks Glikemik (IG), Kategori IG.
+
+  - tags: Label khusus (misal: "Lemak Jenuh", "Tinggi Serat").
+
+### 3. Mekanisme Inferensi (Inference Mechanism)
+
+Sistem menggunakan metode Forward Chaining (Data-Driven). Sistem memulai dari fakta (Data Pasien) kemudian mencocokkannya dengan aturan (Rules) untuk menghasilkan kesimpulan (Rekomendasi Menu).
+
+- Layer 0 (Safety First): Pengecekan label bahaya mutlak.
+
+  - IF makanan mengandung tag "Minuman Manis" OR "Gorengan" THEN Status = DILARANG (Absolute).
+
+- Layer 1 (Kontrol Glikemik):
+
+  - IF Gula Darah Puasa > 140 mg/dL AND Makanan IG Tinggi (>70) THEN Status = DILARANG.
+
+- Layer 2 (Manajemen Obesitas - Preventif):
+
+  - IF IMT > 25 (Obesitas) AND (Makanan IG Tinggi OR Kalori Snack > 200 kkal) THEN Status = DILARANG (Mencegah Resistensi Insulin).
+
+- Layer 3 (Komplikasi Komorbid):
+
+  - IF Pasien Hipertensi AND Natrium Makanan > 400mg THEN Status = DILARANG.
+
+  - IF Pasien Kolesterol AND Lemak Jenuh Tinggi THEN Status = DILARANG.
+
+- Layer 4 (Rekomendasi):
+
+  - ELSE Status = AMAN (Direkomendasikan).
+
+### 4. Perhitungan Kebutuhan Energi (Calorie Calculation)
+
+Menggunakan Rumus Broca Modifikasi sesuai PERKENI:
+
+- Berat Badan Idaman (BBI): (Tinggi - 100) - 10%.
+
+- Kalori Basal: BBI x 30 (Pria) atau BBI x 25 (Wanita).
+
+- Faktor Koreksi:
+
+  - Usia: -5% per dekade jika usia > 40 tahun.
+
+  - Aktivitas: +10% s.d +50% (Bedrest s.d Berat).
+
+  - Status Gizi: -20% jika Obesitas (untuk defisit kalori).
 
 ## 🌟 Fitur Unggulan
 
 ### 1. 🧮 Kalkulator Kalori Medis (Medical-Grade)
 
-Menghitung Berat Badan Idaman (BBI) dan Total Kebutuhan Energi (TKE) secara otomatis menggunakan Rumus Broca Modifikasi.
-
-Faktor Koreksi:
-
-- 📉 Usia: Dikurangi 5% per dekade (jika usia > 40 tahun).
-
-- 🏃 Aktivitas: Penambahan 10-50% sesuai intensitas (Istirahat s.d. Berat).
-
-- ⚖️ Status Gizi: Pengurangan 20% jika pasien Obesitas (IMT > 25).
+Menghitung kebutuhan energi secara presisi medis dengan mempertimbangkan usia, gender, aktivitas, dan status gizi untuk menentukan target kalori harian yang realistis.
 
 ### 2. 🧠 Inference Engine Cerdas (5-Layer Rules)
 
-Menggunakan logika bertingkat untuk memastikan keamanan rekomendasi:
+Mesin logika yang tidak hanya melihat gula darah, tetapi juga Pencegahan Preventif. Contoh: Pasien dengan gula darah normal tetapi Obesitas tetap akan dilarang mengonsumsi Boba atau Gorengan untuk mencegah resistensi insulin di masa depan (sesuai Asas Kehati-hatian Medis).
 
-- 🛡️ Aturan 0 (Safety First): Blokir mutlak makanan berbahaya (Gorengan, Minuman Manis, Lemak Jenuh) tanpa kompromi, meskipun gula darah normal.
+### 3. 🍽️ Dynamic Meal Planner
 
-- 🩸 Aturan 1 (Glikemik): Blokir makanan Indeks Glikemik (IG) Tinggi saat gula darah > 140 mg/dL.
+Fitur penyusunan menu harian otomatis yang Cerdas & Realistis:
 
-- ⚠️ Aturan 2 (Komplikasi): Filter khusus untuk Hipertensi (Batas Natrium), Ginjal (Batas Protein), dan Kolesterol.
+- Menggunakan algoritma alokasi kalori (Pagi 20%, Siang 40%, Malam 25%, Snack 15%).
 
-- ⚖️ Aturan 3 (Obesitas): Peringatan preventif resistensi insulin untuk pasien dengan IMT > 25 (blokir snack > 200 kkal).
+- Dynamic Portion Sizing: Mengkonversi porsi makanan ke dalam gram (misal: "150 gr Nasi Merah") agar total kalori menu pas dengan target pasien.
 
-- 🚨 Aturan 4 (Preventif): Peringatan dini untuk pasien dengan risiko resistensi insulin.
+### 4. 🥗 Database Pangan Lokal
 
-### 3. 🥗 Database Pangan Lokal
-
-Mengutamakan kearifan lokal dengan data nutrisi yang valid:
-
-- 🍚 Karbohidrat: Nasi Merah, Jagung Rebus, Singkong, Ubi.
-
-- 🍗 Protein: Tempe Bacem, Tahu, Ikan Kembung.
-
-- 🧋 Minuman: Deteksi gula tersembunyi pada Boba, Es Teh Manis, dan Jus Kemasan.
-
-## 📚 Landasan Pengetahuan (Knowledge Base)
-
-Sistem ini BUKAN sekadar mencocokkan data, melainkan menerapkan pedoman medis resmi. Berikut adalah alasan ilmiah di balik setiap fitur:
-
-### 🩺 Mengapa Harus Input Berat & Tinggi Badan?
-
-- Menurut PEDOMAN PERKENI 2024, langkah pertama manajemen diabetes adalah menentukan Berat Badan Idaman (BBI).
-
-  ```
-  Rumus: (Tinggi Badan - 100) - 10%.
-  ```
-
-- Alasan Medis: Kebutuhan kalori harus dihitung dari berat ideal, bukan berat aktual. Jika dihitung dari berat aktual pasien obesitas, mereka akan terus kelebihan kalori.
-
-### ⚖️ Mengapa BMI (IMT) Sangat Penting?
-
-- Menurut PEDOMAN PERKENI 2024:
-
-  ```
-  Obesitas (IMT > 25) adalah penyebab utama Resistensi Insulin (sel tubuh menolak insulin).
-  ```
-
-- Logika Sistem: Jika pasien terdeteksi Obesitas, sistem otomatis memotong jatah kalori 20-30% dan melarang makanan Indeks Glikemik Tinggi untuk mencegah resistensi insulin memburuk, meskipun gula darah saat ini normal.
-
-### 🛡️ Berapa batas Indeks Glikemik makanan atau minuman yang dapat dikomsumsi oleh penderita?
-
-- Menurut ADA Standards 2023: Indeks Glikemik (IG) Menggunakan klasifikasi IG Rendah (<55) dan Tinggi (>70) untuk menjaga stabilitas gula darah post-prandial.
-
-### 🩸 Mengapa Batas Gula Darah 140 mg/dL?
-
-- Berdasarkan Tabel 3 PEDOMAN PERKENI 2024, kadar gula darah puasa normal adalah < 100 mg/dL.
-
-- Logika Sistem: Jika gula darah puasa > 140 mg/dL (Hiperglikemia), sistem memperketat aturan dengan memblokir semua sumber karbohidrat sederhana (IG Tinggi) untuk mencegah lonjakan drastis (Glucose Spike).
-
-### 🚫 Mengapa Makanan dan Minuman tinngi gula dan lemak Dilarang Mutlak?
-
-- Berdasarkan Asas Kehati-hatian Medis:
-
-  ```
-  Makanan dengan label "Lemak Jenuh" atau "Tinggi Gula" memiliki risiko jangka panjang yang pasti.
-  ```
-
-- Sumber ADA 2023: Sangat tegas merekomendasikan untuk membatasi lemak jenuh (saturated fat) dan lemak trans (gorengan) untuk mengurangi risiko kardiovaskular (jantung), yang merupakan pembunuh utama pasien diabetes.
-
-- Logika Sistem (Aturan 0): Makanan ini diblokir tanpa syarat. Walaupun gula darah pasien normal hari ini, mengonsumsi Boba akan merusak kontrol gula darah di masa depan.
+Mengutamakan kearifan lokal (Singkong, Tempe Bacem, Ikan Kembung, Ubi) dibandingkan makanan barat, sehingga rekomendasi mudah diterapkan oleh pasien di Indonesia.
 
 ### 🚀 Cara Menjalankan (Local)
 
@@ -126,17 +150,18 @@ streamlit run app.py
 
 ```
 Sistem-Rekomendasi-Menu-Penderita-Diabetes/
-├── data/ # BASIS PENGETAHUAN
-│ ├── food_database.json # Database Nutrisi & IG Makanan dan Minuman
-│ └── medical_rules.json # Parameter Medis (Batas Gula, Batas Obesitas)
+├── data/                     # BASIS PENGETAHUAN
+│ ├── food_database.json      # Database Nutrisi & IG (Fakta Objek)
+│ └── medical_rules.json      # Parameter Medis (Fakta Aturan)
 │
 ├── modules/ # LOGIKA SISTEM (BACKEND)
-│ ├── calorie_calculator.py # Rumus Broca & Perhitungan Kalori
-│ ├── inference_engine.py # Logika IF-THEN & Filter Makanan
-│ └── data_loader.py # Fungsi pembaca JSON
+│ ├── calorie_calculator.py   # Algoritma Rumus Broca
+│ ├── inference_engine.py     # Algoritma Forward Chaining & Filtering
+│ ├── data_loader.py          # Fungsi pembaca JSON
+│ └── meal_planner.py         # Algoritma Penyusunan Menu & Porsi
 │
 ├── app.py # ANTARMUKA PENGGUNA (FRONTEND)
-├── requirements.txt # Daftar Pustaka Python
+├── requirements.txt          # Library yang perlu diinstall
 └── README.md
 ```
 
@@ -144,18 +169,16 @@ Sistem-Rekomendasi-Menu-Penderita-Diabetes/
 
 Sistem ini dikembangkan berdasarkan studi literatur dari dokumen berikut:
 
-PERKENI (2024). Pedoman Pengelolaan dan Pencegahan Diabetes Melitus Tipe 2 di Indonesia. Jakarta: PB PERKENI.
+- PERKENI (2024). Pedoman Pengelolaan dan Pencegahan Diabetes Melitus Tipe 2 di Indonesia. Jakarta: PB PERKENI.
 
-American Diabetes Association (2023). Standards of Care in Diabetes—2023. Diabetes Care, 46(Supplement_1).
+- American Diabetes Association (2023). Standards of Care in Diabetes—2023. Diabetes Care, 46(Supplement_1).
 
-Soelistijo, S. A., et al. (2021). Pedoman Pengelolaan dan Pencegahan Diabetes Melitus Tipe 2 Dewasa di Indonesia 2021. PB PERKENI.
+- Soelistijo, S. A., et al. (2021). Pedoman Pengelolaan dan Pencegahan Diabetes Melitus Tipe 2 Dewasa di Indonesia 2021. PB PERKENI.
 
 ## 🔜 Rencana Pengembangan (Future Work)
 
 [ ] Fitur Defisit Kalori Otomatis: Menghitung target penurunan berat badan spesifik per minggu, dikarenakan menurut pedoman PERKENI 2024 yang menjelaskan bahwa pasien yang mengalami obesitas disarankan untuk menurunkan berat badan.
 
-[ ] Meal Planner: Menyusun menu pagi/siang/malam agar pas dengan total kalori penderita.
-
-## 🔜 Dokumentasi
+[ ] Personalisasi Preferensi: Menambahkan filter "Alergi" atau "Kesukaan" (misal: Vegetarian).
 
 <i>Project ini disusun untuk memenuhi Tugas Akhir Mata Kuliah Rekayasa Sistem Berbasis Pengetahuan Kelas C.</i>
